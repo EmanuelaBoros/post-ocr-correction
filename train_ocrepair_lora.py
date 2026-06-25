@@ -41,8 +41,12 @@ def formatting_func(example, tokenizer):
 
 
 def compute_cer_wer(predictions, references):
+    predictions = [str(x) if x is not None else "" for x in list(predictions)]
+    references = [str(x) if x is not None else "" for x in list(references)]
+
     cer = cer_metric.compute(predictions=predictions, references=references)
     word_error_rate = wer(references, predictions)
+
     return cer, word_error_rate
 
 
@@ -51,8 +55,8 @@ def print_initial_ocr_baseline(eval_dataset, max_samples=None):
         n = min(max_samples, len(eval_dataset))
         eval_dataset = eval_dataset.select(range(n))
 
-    ocr_texts = eval_dataset["ocr"]
-    references = eval_dataset["ground_truth"]
+    ocr_texts = list(eval_dataset["ocr"])
+    references = list(eval_dataset["ground_truth"])
 
     cer, word_error_rate = compute_cer_wer(ocr_texts, references)
 
