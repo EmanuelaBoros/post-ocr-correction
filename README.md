@@ -76,9 +76,14 @@ OCR WER: 0.344423
 
 We report Character Error Rate (CER) and Word Error Rate (WER). Lower is better.
 
-| System | Model | Training | Split | CER ↓ | WER ↓ | Notes |
-|---|---|---|---|---:|---:|---|
-| OCR baseline | Original OCR hypothesis | None | Validation | 0.087017 | 0.344423 | No correction applied |
-| LoRA fine-tuned | Qwen/Qwen2.5-3B-Instruct | LoRA, 3 epochs | Validation | TBD | TBD | Generated post-correction |
-| LoRA fine-tuned | Qwen/Qwen2.5-3B-Instruct | LoRA, 3 epochs | Test | TBD | TBD | Final test evaluation |
+## Results
 
+We report Character Error Rate (CER) and Word Error Rate (WER). Lower is better.
+
+| Run | Model | Method | Context length | Epochs | Validation CER ↓ | Validation WER ↓ | Test CER ↓ | Test WER ↓ | Notes |
+|---:|---|---|---:|---:|---:|---:|---:|---:|---|
+| 0 | OCR baseline | None | — | — | 0.087017 | 0.344423 | TBD | TBD | Original OCR hypothesis, no correction |
+| 1 | Qwen/Qwen2.5-3B-Instruct | LoRA/QLoRA | 4096 | 3 | 0.248301 | 0.430855 | TBD | TBD | Worse than OCR baseline on dev; likely overcorrection / generation drift |
+| 2 | Qwen/Qwen2.5-3B-Instruct | LoRA/QLoRA | 2048 | 3 | TBD | TBD | TBD | TBD | Shorter context comparison |
+| 3 | Qwen/Qwen2.5-1.5B-Instruct | LoRA/QLoRA | 4096 | 3 | TBD | TBD | TBD | TBD | Smaller model comparison |
+| 4 | Mistral-7B-Instruct-v0.3 | LoRA/QLoRA | 4096 | 3 | TBD | TBD | TBD | TBD | Larger model comparison |
