@@ -262,7 +262,7 @@ def main():
         bf16=True,
         # 4096 may be okay on A10G with 4-bit.
         # If OOM, reduce to 2048.
-        max_seq_length=4096,
+        max_length=4096,
         packing=False,
         report_to="none",
         push_to_hub=True,
