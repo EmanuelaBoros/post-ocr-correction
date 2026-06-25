@@ -1,0 +1,10 @@
+transformers
+datasets
+accelerate
+peft
+trl
+bitsandbytes
+evaluate
+jiwer
+sentencepiece
+protobuf
