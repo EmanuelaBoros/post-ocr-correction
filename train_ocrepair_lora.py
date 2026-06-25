@@ -272,7 +272,7 @@ def main():
 
     trainer = SFTTrainer(
         model=model,
-        tokenizer=tokenizer,
+        # tokenizer=tokenizer,
         train_dataset=ds["train"],
         eval_dataset=ds["validation"],
         peft_config=lora_config,
