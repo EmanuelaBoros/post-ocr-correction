@@ -58,7 +58,7 @@ def main():
         save_steps=100,
         save_total_limit=2,
         bf16=True,
-        max_seq_length=4096,
+        max_length=4096,
         packing=False,
         report_to="none",
         push_to_hub=True,
