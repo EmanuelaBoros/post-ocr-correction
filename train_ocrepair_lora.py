@@ -27,7 +27,7 @@ def main():
         MODEL_NAME,
         torch_dtype=torch.bfloat16,
         device_map="auto",
-        load_in_4bit=True,
+        # load_in_4bit=True,
         trust_remote_code=True,
     )
 
