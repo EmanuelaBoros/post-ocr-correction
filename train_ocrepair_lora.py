@@ -18,9 +18,9 @@ HUB_MODEL_ID = "emanuelaboros/qwen2-5-3b-overproof-postcorrection"
 
 # For fast evaluation during training.
 # Increase later if you want more stable numbers.
-CER_WER_EVERY_N_STEPS = 100
+CER_WER_EVERY_N_STEPS = 1000
 CER_WER_MAX_EVAL_SAMPLES = 50
-CER_WER_MAX_NEW_TOKENS = 1024
+CER_WER_MAX_NEW_TOKENS = 2048
 
 SYSTEM_PROMPT = (
     "You are an OCR post-correction system for historical English newspapers. "
