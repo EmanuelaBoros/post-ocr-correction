@@ -132,7 +132,7 @@ class OCRCorrectionEvalCallback(TrainerCallback):
                 prompt,
                 return_tensors="pt",
                 truncation=True,
-                max_length=args.max_seq_length,
+                max_length=4096,
             ).to(model.device)
 
             with torch.no_grad():
